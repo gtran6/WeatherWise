@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">WeatherWise</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_fav">Favorites</string>
+    <string name="menu_alert">Alert</string>
+    <string name="menu_setting">Setting</string>
+    <string name="add_location">Location</string>
+    <string name="click_on_the_image_to_set_your_location">Click on the image to set your location</string>
+    <string name="try_again">Please try again</string>
+</resources>
