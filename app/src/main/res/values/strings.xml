@@ -7,4 +7,6 @@
     <string name="add_location">Location</string>
     <string name="click_on_the_image_to_set_your_location">Click on the image to set your location</string>
     <string name="try_again">Please try again</string>
+    <string name="premission_dined">Permission Denied</string>
+    <string name="ok">OK</string>
 </resources>
