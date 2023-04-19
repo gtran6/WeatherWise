@@ -11,4 +11,10 @@
     <string name="ok">OK</string>
     <string name="save">Save</string>
     <string name="update">Update</string>
+    <string name="city_name">Dallas</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind_speed">Wind Speed</string>
+    <string name="feels_like">Feels Like</string>
+    <string name="today">Today</string>
+    <string name="full_report">Full Report</string>
 </resources>
