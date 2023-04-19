@@ -1,6 +1,5 @@
 package com.myprojects.data.remote
 
-
 sealed class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
     data class Success<out R>(val _data: R?) : Resource<R>(
