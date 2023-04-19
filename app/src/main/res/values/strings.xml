@@ -9,4 +9,6 @@
     <string name="try_again">Please try again</string>
     <string name="premission_dined">Permission Denied</string>
     <string name="ok">OK</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
 </resources>

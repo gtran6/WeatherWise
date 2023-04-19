@@ -78,7 +78,7 @@ class SplashFragment : Fragment() {
         binding.animationView.setAnimation(R.raw.select_location)
         binding.animationView.setOnClickListener {
             findNavController().navigate(
-                SplashFragmentDirections.actionNavSplashToSelectLocationFragment(
+                SplashFragmentDirections.actionNavSplashToMapsFragment(
                     true
                 )
             )
@@ -158,7 +158,7 @@ class SplashFragment : Fragment() {
     }
 
     private fun onResponse(res: Resource<WeatherResponse>?) {
-        when (res.status) {
+        when (res!!.status) {
             Status.SUCCESS -> {
                 viewModel.saveResponse(
                     res.data ?: WeatherResponse()
