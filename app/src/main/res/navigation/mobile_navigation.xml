@@ -47,6 +47,7 @@
         android:name="com.myprojects.ui.home.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_nav_home_to_mapsFragment"
             app:destination="@id/mapsFragment"
@@ -54,6 +55,16 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+
+        <argument
+            android:name="data"
+            android:defaultValue="@null"
+            app:argType="com.myprojects.model.weather.WeatherResponse"
+            app:nullable="true" />
+        <argument
+            android:name="latlog"
+            app:argType="com.google.android.gms.maps.model.LatLng" />
+
     </fragment>
 
 </navigation>
