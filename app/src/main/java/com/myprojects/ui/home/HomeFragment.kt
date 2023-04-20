@@ -57,7 +57,7 @@ class HomeFragment : Fragment() {
         when (it!!.status) {
             Status.SUCCESS -> if (!it.data.isNullOrEmpty()) setupLayout(it.data[0].cashedData)
             Status.ERROR -> Log.d(TAG, "onViewCreated: ${it.message}")
-            Status.LOADING -> Log.d(TAG, "onViewCreated: LOADING !!")
+            Status.LOADING -> Log.d(TAG, "onViewCreated: LOADING")
         }
     }
 
