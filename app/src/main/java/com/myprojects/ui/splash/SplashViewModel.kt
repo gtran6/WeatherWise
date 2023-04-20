@@ -20,8 +20,8 @@ class SplashViewModel(private val repository: RepositoryInterface) : ViewModel()
 
     fun getDataFromRepo(
         latLng: LatLng = LatLng(
-            30.02401127333763,
-            31.564412713050846
+            32.779167,
+            -96.808891
         ),
         language: String = AppUnits.EN.string
     ) = liveData(Dispatchers.IO) {
