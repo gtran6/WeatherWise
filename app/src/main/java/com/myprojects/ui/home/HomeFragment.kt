@@ -57,7 +57,6 @@ class HomeFragment : Fragment() {
                 )
             )
         }
-
     }
 
     private fun checkStatus(it: Resource<List<CashedEntity>>?) {
