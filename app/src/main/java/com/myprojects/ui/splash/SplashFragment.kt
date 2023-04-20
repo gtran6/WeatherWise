@@ -109,6 +109,7 @@ class SplashFragment : Fragment() {
         }.show()
     }
 
+    @SuppressLint("MissingPermission")
     private fun getLocation() {
         fusedLocationProviderClient.lastLocation.addOnSuccessListener {
             if (it != null) {
@@ -157,6 +158,7 @@ class SplashFragment : Fragment() {
                 }
     }
 
+    @SuppressLint("MissingPermission")
     private fun onResponse(res: Resource<WeatherResponse>?) {
         when (res!!.status) {
             Status.SUCCESS -> {
@@ -165,9 +167,8 @@ class SplashFragment : Fragment() {
                 )
                 viewModel.setTimeStamp(System.currentTimeMillis())
                 findNavController().navigate(
-                    SplashFragmentDirections.actionSplashFragmentToNavHome(
-                        data = res.data
-                            ?: WeatherResponse(),
+                    SplashFragmentDirections.actionNavSplashToNavHome(
+                        data = res.data ?: WeatherResponse(),
                         latlog = viewModel.getLatLon()
                     )
                 )

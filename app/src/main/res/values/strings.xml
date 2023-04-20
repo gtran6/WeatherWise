@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">WeatherWise</string>
+    <string name="app_name">Weather Wise</string>
     <string name="menu_home">Home</string>
     <string name="menu_fav">Favorites</string>
     <string name="menu_alert">Alert</string>
@@ -17,4 +17,5 @@
     <string name="feels_like">Feels Like</string>
     <string name="today">Today</string>
     <string name="full_report">Full Report</string>
+    <string name="degree_symble">°</string>
 </resources>

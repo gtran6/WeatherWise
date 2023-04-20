@@ -1,9 +1,9 @@
-package abdulrahman.ali19.kist.data.local
+package com.myprojects.data.local
 
-import abdulrahman.ali19.kist.data.db.AppDatabase
-import abdulrahman.ali19.kist.data.pojo.model.dbentities.AlertEntity
-import abdulrahman.ali19.kist.data.pojo.model.dbentities.CashedEntity
-import abdulrahman.ali19.kist.data.pojo.model.dbentities.FavoriteEntity
+import com.myprojects.data.database.AppDatabase
+import com.myprojects.data.entity.AlertEntity
+import com.myprojects.data.entity.CashedEntity
+import com.myprojects.data.entity.FavoriteEntity
 
 class LocalSourceImpl constructor(
     private val appDatabase: AppDatabase
