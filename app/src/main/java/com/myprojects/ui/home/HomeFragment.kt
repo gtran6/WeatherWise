@@ -50,6 +50,13 @@ class HomeFragment : Fragment() {
             viewModel.getCashedData().observe(viewLifecycleOwner) { checkStatus(it) }
         }
 
+        binding.btnViewFullReport.setOnClickListener {
+            navController.navigate(
+                HomeFragmentDirections.actionNavHomeToWeekFragment(
+                    args.data ?: cashedData
+                )
+            )
+        }
 
     }
 
