@@ -64,7 +64,23 @@
         <argument
             android:name="latlog"
             app:argType="com.google.android.gms.maps.model.LatLng" />
+        <action
+            android:id="@+id/action_nav_home_to_weekFragment"
+            app:destination="@id/weekFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
+    </fragment>
+    <fragment
+        android:id="@+id/weekFragment"
+        android:name="com.myprojects.ui.week.WeekFragment"
+        android:label="fragment_week"
+        tools:layout="@layout/fragment_week">
+        <argument
+            android:name="data"
+            app:argType="com.myprojects.model.weather.WeatherResponse" />
     </fragment>
 
 </navigation>

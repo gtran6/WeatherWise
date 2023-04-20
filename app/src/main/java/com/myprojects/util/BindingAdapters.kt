@@ -17,6 +17,7 @@ import com.myprojects.model.weather.Daily
 import com.myprojects.model.weather.Hourly
 import com.myprojects.model.weather.Temp
 import com.myprojects.ui.adpater.DayAdapter
+import com.myprojects.ui.adpater.WeekAdapter
 import com.myprojects.weatherwise.R
 import java.text.SimpleDateFormat
 import java.util.*
@@ -76,14 +77,14 @@ fun RecyclerView.setDayAdapter(list: ArrayList<Hourly>?) {
     this.adapter = dayAdapter
 }
 
-/*@BindingAdapter("setWeekAdapter")
+@BindingAdapter("setWeekAdapter")
 fun RecyclerView.setWeekAdapter(list: ArrayList<Daily>?) {
     this.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
     val weekAdapter = WeekAdapter()
     weekAdapter.setWeek(list ?: arrayListOf())
     this.adapter = weekAdapter
 }
-
+/*
 @BindingAdapter("setFavoriteAdapter")
 fun RecyclerView.setFavoriteAdapter(favModel: FavModel?) {
     if (favModel != null) {

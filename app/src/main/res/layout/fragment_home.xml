@@ -214,7 +214,7 @@
             android:id="@+id/recyclerView"
             setDayAdapter="@{data.dayList}"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="150dp"
             android:scrollbars="horizontal"
             android:layout_marginBottom="40dp"
             android:layout_marginStart="12dp"
