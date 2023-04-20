@@ -10,6 +10,7 @@ import com.myprojects.data.remote.ConnectionProvider
 import com.myprojects.data.remote.RemoteSource
 import com.myprojects.repository.Repository
 import com.myprojects.repository.RepositoryInterface
+import com.myprojects.ui.favorite.FavoriteViewModel
 import com.myprojects.ui.home.HomeViewModel
 import com.myprojects.ui.map.MapViewModel
 import com.myprojects.ui.splash.SplashViewModel
@@ -48,6 +49,10 @@ val weatherModules = module {
 
     viewModel {
         SplashViewModel(get())
+    }
+
+    viewModel {
+        FavoriteViewModel(get())
     }
 
     viewModel {

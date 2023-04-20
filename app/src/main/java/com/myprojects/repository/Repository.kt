@@ -9,8 +9,6 @@ import com.myprojects.data.preferences.PreferenceInterface
 import com.myprojects.data.remote.RemoteSource
 import com.myprojects.model.weather.WeatherResponse
 
-private const val TAG = "Repository.dev"
-
 class Repository constructor(
     private val remoteSource: RemoteSource,
     private val localSource: LocalSource,
@@ -111,6 +109,4 @@ class Repository constructor(
     override fun setLanguage(string: String) {
         preferences.setLanguage(string)
     }
-
-
 }

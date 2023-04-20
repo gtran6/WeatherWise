@@ -12,14 +12,13 @@ import com.google.android.gms.maps.model.LatLng
 import com.myprojects.data.entity.FavoriteEntity
 import com.myprojects.data.preferences.AppUnits
 import com.myprojects.data.preferences.PreferenceProvider
-import com.myprojects.model.AlertModel
 import com.myprojects.model.FavoriteModel
 import com.myprojects.model.weather.Daily
 import com.myprojects.model.weather.Hourly
 import com.myprojects.model.weather.Temp
-import com.myprojects.ui.adpater.DayAdapter
-import com.myprojects.ui.adpater.FavoriteAdapter
-import com.myprojects.ui.adpater.WeekAdapter
+import com.myprojects.ui.adapter.DayAdapter
+import com.myprojects.ui.adapter.FavoriteAdapter
+import com.myprojects.ui.adapter.WeekAdapter
 import com.myprojects.weatherwise.R
 import java.text.SimpleDateFormat
 import java.util.*

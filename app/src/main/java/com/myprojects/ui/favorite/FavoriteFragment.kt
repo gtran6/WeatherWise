@@ -7,15 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.myprojects.data.entity.FavoriteEntity
 import com.myprojects.data.remote.Resource
 import com.myprojects.data.remote.Status
 import com.myprojects.model.FavoriteModel
-import com.myprojects.ui.adpater.FavoriteAdapter
-import com.myprojects.ui.home.HomeFragmentArgs
+import com.myprojects.ui.adapter.FavoriteAdapter
 import com.myprojects.weatherwise.MainActivity
 import com.myprojects.weatherwise.databinding.FragmentFavoriteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -33,6 +31,7 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.FavoriteAdapterInterface {
         binding.btnAdd.setOnClickListener {
             navController.navigate(FavoriteFragmentDirections.actionFavoriteFragmentToMapsFragment(false))
         }
+
         viewModel.getFavoriteList().observe(viewLifecycleOwner) { setupLayout(it) }
     }
 

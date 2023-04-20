@@ -1,4 +1,60 @@
-package com.myprojects.ui.map
+val weatherModules = module {
+    single<RepositoryInterface> {
+        Repository(
+            remoteSource = get(),
+            localSource = get(),
+            preferences = get()
+        )
+    }
+
+    single<PreferenceInterface> {
+        PreferenceProvider(androidContext())
+    }
+
+    single<RemoteSource>{
+        ConnectionProvider
+    }
+
+    single<LocalSource> {
+        LocalSourceImpl(get())
+    }
+
+    single {
+        Room.databaseBuilder(
+            androidContext(),
+            AppDatabase::class.java,
+            "WEATHER_APP_DB"
+        ).allowMainThreadQueries().build()
+    }
+
+    factory {
+        CreateNotification(androidContext())
+    }
+
+    viewModel {
+        SplashViewModel(get())
+    }
+
+    viewModel {
+        FavoritesViewModel(get())
+    }
+
+    viewModel {
+        AlertViewModel(get())
+    }
+
+    viewModel {
+        HomeViewModel(get())
+    }
+
+    viewModel {
+        MapViewModel(get())
+    }
+
+    viewModel {
+        SettingsViewModel(get())
+    }
+}package com.myprojects.ui.map
 
 import android.location.Address
 import android.location.Geocoder
@@ -104,7 +160,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                         binding.btnSave.visibility = View.VISIBLE
                         binding.btnSave.setOnClickListener {
                             findNavController().popBackStack()
-                            Snackbar.make(requireView(), "Saved :)", Snackbar.LENGTH_SHORT).show()
+                            Snackbar.make(requireView(), "Saved", Snackbar.LENGTH_SHORT).show()
                         }
                     }
                     Status.ERROR -> {
