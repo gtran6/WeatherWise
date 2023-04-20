@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.myprojects.ui.home.HomeFragment"
-        android:label="HomeFragment"
+        android:label="Home"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -76,7 +76,7 @@
     <fragment
         android:id="@+id/weekFragment"
         android:name="com.myprojects.ui.week.WeekFragment"
-        android:label="fragment_week"
+        android:label="Weekly Report"
         tools:layout="@layout/fragment_week">
         <argument
             android:name="data"
