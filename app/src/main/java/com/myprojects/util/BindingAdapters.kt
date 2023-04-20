@@ -13,10 +13,12 @@ import com.myprojects.data.entity.FavoriteEntity
 import com.myprojects.data.preferences.AppUnits
 import com.myprojects.data.preferences.PreferenceProvider
 import com.myprojects.model.AlertModel
+import com.myprojects.model.FavoriteModel
 import com.myprojects.model.weather.Daily
 import com.myprojects.model.weather.Hourly
 import com.myprojects.model.weather.Temp
 import com.myprojects.ui.adpater.DayAdapter
+import com.myprojects.ui.adpater.FavoriteAdapter
 import com.myprojects.ui.adpater.WeekAdapter
 import com.myprojects.weatherwise.R
 import java.text.SimpleDateFormat
@@ -47,7 +49,7 @@ fun TextView.setTempDegree(degree: Double) {
 }
 
 @BindingAdapter("setCityName")
-fun TextView.setCityNamee(latLng: LatLng){
+fun TextView.setCityName(latLng: LatLng){
     val pref  = PreferenceProvider(context)
     val geocoder = Geocoder(context.applicationContext, Locale(pref.getLanguage()))
     val address: MutableList<Address>? =
@@ -84,17 +86,17 @@ fun RecyclerView.setWeekAdapter(list: ArrayList<Daily>?) {
     weekAdapter.setWeek(list ?: arrayListOf())
     this.adapter = weekAdapter
 }
-/*
+
 @BindingAdapter("setFavoriteAdapter")
-fun RecyclerView.setFavoriteAdapter(favModel: FavModel?) {
+fun RecyclerView.setFavoriteAdapter(favModel: FavoriteModel?) {
     if (favModel != null) {
         this.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-        val favAdapter = FavoritesAdapter(listener = favModel.favAdapterInterface)
+        val favAdapter = FavoriteAdapter(listener = favModel.favAdapterInterface)
         favAdapter.setCountries(favModel.countries as ArrayList<FavoriteEntity>)
         this.adapter = favAdapter
     }
 }
-
+/*
 @BindingAdapter("setAlertAdapter")
 fun RecyclerView.setAlertAdapter(alertModel: AlertModel?) {
     if (alertModel != null) {
