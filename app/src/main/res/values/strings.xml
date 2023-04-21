@@ -23,4 +23,13 @@
     <string name="next_48_hours">Next 48 hours</string>
     <string name="this_week">This Week</string>
     <string name="add_your_favorite_location">add your favorite location</string>
+    <string name="temperature">Temperature</string>
+    <string name="kelvin">Kelvin</string>
+    <string name="fahrenheit">Fahrenheit</string>
+    <string name="celsius">Celsius</string>
+    <string name="meter_second">Meter/Second</string>
+    <string name="mile_hour">Mile/Hour</string>
+    <string name="location">Location</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
 </resources>

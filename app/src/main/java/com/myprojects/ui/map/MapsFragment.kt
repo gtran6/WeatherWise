@@ -3,9 +3,7 @@ package com.myprojects.ui.map
 import android.location.Address
 import android.location.Geocoder
 import androidx.fragment.app.Fragment
-
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
