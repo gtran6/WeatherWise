@@ -13,6 +13,7 @@ import com.myprojects.repository.RepositoryInterface
 import com.myprojects.ui.favorite.FavoriteViewModel
 import com.myprojects.ui.home.HomeViewModel
 import com.myprojects.ui.map.MapViewModel
+import com.myprojects.ui.setting.SettingViewModel
 import com.myprojects.ui.splash.SplashViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -61,5 +62,9 @@ val weatherModules = module {
 
     viewModel {
         MapViewModel(get())
+    }
+
+    viewModel {
+        SettingViewModel(get())
     }
 }
