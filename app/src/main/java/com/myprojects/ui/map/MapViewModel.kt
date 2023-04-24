@@ -41,7 +41,7 @@ class MapViewModel(private val repositoryInterface: RepositoryInterface) : ViewM
         } catch (exception: Exception) {
             emit(
                 Resource.Error(
-                    exception.message ?: "SomethingWong happened",
+                    exception.message ?: "Something wrong happened",
                 )
             )
         }
