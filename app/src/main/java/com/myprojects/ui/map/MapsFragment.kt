@@ -4,6 +4,7 @@ import android.location.Address
 import android.location.Geocoder
 import androidx.fragment.app.Fragment
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -50,7 +51,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMapsBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -76,6 +77,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                 findNavController().popBackStack()
                 Snackbar.make(requireView(), "Saved", Snackbar.LENGTH_SHORT).show()
             }
+            Log.d("MapsFragment", "onMapClick: My Location clicked")
         } else {
             val geocoder =
                 Geocoder(requireContext().applicationContext, Locale(viewModel.getLang()))
@@ -86,6 +88,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                     Status.LOADING -> {
                         map.setOnMapClickListener(null)
                         binding.progressBar.visibility = View.VISIBLE
+                        Log.d("MapsFragment", "getWeatherRemotelyLatlon: LOADING")
                     }
                     Status.SUCCESS -> {
                         map.setOnMapClickListener(this)
@@ -103,11 +106,14 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                             findNavController().popBackStack()
                             Snackbar.make(requireView(), "Saved", Snackbar.LENGTH_SHORT).show()
                         }
+                        Log.d("MapsFragment", "getWeatherRemotelyLatlon: SUCCESS")
                     }
                     Status.ERROR -> {
+                        Log.e("MapsFragment", "getWeatherRemotelyLatlon: ERROR")
                     }
                 }
             }
+            Log.d("MapsFragment", "onMapClick: Other location clicked")
         }
     }
 }

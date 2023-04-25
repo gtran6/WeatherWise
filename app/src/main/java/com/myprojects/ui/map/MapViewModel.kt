@@ -12,19 +12,18 @@ import com.myprojects.repository.RepositoryInterface
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MapViewModel(private val repositoryInterface: RepositoryInterface) : ViewModel() {
+class MapViewModel(private var repository: RepositoryInterface) : ViewModel() {
+    fun saveMyLatLon(latlon: LatLng) = repository.setLatLon(latlon)
 
-    fun saveMyLatLon(latlon: LatLng) = repositoryInterface.setLatLon(latlon)
-
-    fun getMyLatLon() = repositoryInterface.getLatLon()
+    fun getMyLatLon() = repository.getLatLon()
 
     fun updateCashedData(cashedEntity: CashedEntity) =
-        viewModelScope.launch { repositoryInterface.insertCashed(cashedEntity) }
+        viewModelScope.launch { repository.insertCashed(cashedEntity) }
 
 
     fun addFavoriteToDatabase(fav: FavoriteEntity) {
         viewModelScope.launch {
-            repositoryInterface.insertFavorite(fav)
+            repository.insertFavorite(fav)
         }
     }
 
@@ -37,14 +36,15 @@ class MapViewModel(private val repositoryInterface: RepositoryInterface) : ViewM
     ) = liveData(Dispatchers.IO) {
         emit(Resource.Loading(isLoading = true, _data = null))
         try {
-            emit(Resource.Success(_data = repositoryInterface.getWeatherByLatLon(latLng, language)))
+            emit(Resource.Success(_data = repository.getWeatherByLatLon(latLng, language)))
         } catch (exception: Exception) {
             emit(
                 Resource.Error(
-                    exception.message ?: "Something wrong happened",
+                    exception.message ?: "Something happened",
                 )
             )
         }
     }
-    fun getLang() = repositoryInterface.getLanguage()
+
+    fun getLang() = repository.getLanguage()
 }
