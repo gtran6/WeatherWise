@@ -29,7 +29,7 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.FavoriteAdapterInterface {
         super.onViewCreated(view, savedInstanceState)
         navController = findNavController()
         binding.btnAdd.setOnClickListener {
-            navController.navigate(FavoriteFragmentDirections.actionFavoriteFragmentToMapsFragment(false))
+            navController.navigate(FavoriteFragmentDirections.actionNavFavToMapsFragment(itItMyLocation = false))
         }
 
         viewModel.getFavoriteList().observe(viewLifecycleOwner) { setupLayout(it) }
@@ -97,7 +97,7 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.FavoriteAdapterInterface {
     override fun onItemClick(pos: Int) {
         val data = cashedData[pos].cashedData
         navController.navigate(
-            FavoriteFragmentDirections.actionFavoriteFragmentToNavHome(
+            FavoriteFragmentDirections.actionNavFavToNavHome(
                 data = data,
                 latlog = LatLng(data.lat, data.lon)
             )

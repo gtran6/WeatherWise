@@ -18,7 +18,7 @@ class FavoriteViewModel(private val repositoryInterface: RepositoryInterface) : 
         } catch (exception: Exception) {
             emit(
                 Resource.Error(
-                    exception.message ?: "SomethingWong happened",
+                    exception.message ?: "Something wrong happened",
                 )
             )
         }

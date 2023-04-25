@@ -89,20 +89,23 @@
         android:name="com.myprojects.ui.favorite.FavoriteFragment"
         android:label="Favorite Location"
         tools:layout="@layout/fragment_favorite">
+
         <action
-            android:id="@+id/action_favoriteFragment_to_mapsFragment"
+            android:id="@+id/action_nav_fav_to_mapsFragment"
             app:destination="@id/mapsFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right" />
         <action
-            android:id="@+id/action_favoriteFragment_to_nav_home"
+            android:id="@+id/action_nav_fav_to_nav_home"
             app:destination="@id/nav_home"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+
+
     </fragment>
 
     <fragment

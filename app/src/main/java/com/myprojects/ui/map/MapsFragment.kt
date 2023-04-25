@@ -81,7 +81,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                 Geocoder(requireContext().applicationContext, Locale(viewModel.getLang()))
             val address: MutableList<Address>? =
                 geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
-            viewModel.getWeatherRemotlyLatlon(p0).observe(viewLifecycleOwner) {
+            viewModel.getWeatherRemotelyLatlon(p0).observe(viewLifecycleOwner) {
                 when (it.status) {
                     Status.LOADING -> {
                         map.setOnMapClickListener(null)
@@ -90,7 +90,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                     Status.SUCCESS -> {
                         map.setOnMapClickListener(this)
                         if (address != null)
-                            viewModel.addFavoriteTodatabase(
+                            viewModel.addFavoriteToDatabase(
                                 FavoriteEntity(
                                     locationName = address[0].countryName + address[0].adminArea,
                                     latLng = p0,

@@ -22,13 +22,13 @@ class MapViewModel(private val repositoryInterface: RepositoryInterface) : ViewM
         viewModelScope.launch { repositoryInterface.insertCashed(cashedEntity) }
 
 
-    fun addFavoriteTodatabase(fav: FavoriteEntity) {
+    fun addFavoriteToDatabase(fav: FavoriteEntity) {
         viewModelScope.launch {
             repositoryInterface.insertFavorite(fav)
         }
     }
 
-    fun getWeatherRemotlyLatlon(
+    fun getWeatherRemotelyLatlon(
         latLng: LatLng = LatLng(
             30.02401127333763,
             31.564412713050846
