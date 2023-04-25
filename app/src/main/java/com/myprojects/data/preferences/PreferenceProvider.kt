@@ -11,8 +11,8 @@ private const val LAST_TIMESTAMP = "lastTimeStamp"
 private const val DEF_LANG = "defLang"
 private const val LAT_KEY = "myLat"
 private const val LON_KEY = "myLon"
-const val NULL_LAT = 30.02401127333763
-const val NULL_LON = 31.564412713050846
+const val NULL_LAT = 33.1506744
+const val NULL_LON = -96.8236116
 
 class PreferenceProvider(
     context: Context
