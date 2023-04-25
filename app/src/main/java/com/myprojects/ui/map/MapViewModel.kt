@@ -47,5 +47,4 @@ class MapViewModel(private val repositoryInterface: RepositoryInterface) : ViewM
         }
     }
     fun getLang() = repositoryInterface.getLanguage()
-
 }

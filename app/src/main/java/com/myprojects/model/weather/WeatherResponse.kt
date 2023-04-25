@@ -4,7 +4,6 @@ package com.myprojects.model.weather
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-
 data class WeatherResponse(
     @SerializedName("current")
     val current: Current = Current(),

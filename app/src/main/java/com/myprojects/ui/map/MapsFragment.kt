@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -42,7 +41,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
         with(map) {
             setOnMapClickListener(this@MapsFragment)
             uiSettings.setAllGesturesEnabled(true)
-            googleMap.addMarker(MarkerOptions().position(viewModel.getMyLatLon()).title("Home"))
+            googleMap.addMarker(MarkerOptions().position(viewModel.getMyLatLon()).title("My Home"))
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(viewModel.getMyLatLon(), 10f))
         }
     }
@@ -64,16 +63,16 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
 
     override fun onMapClick(p0: LatLng) {
         map.clear()
-        map.addMarker(MarkerOptions().position(latLng))
+        map.addMarker(MarkerOptions().position(p0))
 
         if (args.itItMyLocation) {
             binding.btnSave.visibility = View.VISIBLE
-            this.latLng = latLng
+            this.latLng = p0
             if (viewModel.getMyLatLon() != nullLatLon)
                 binding.btnSave.text = getString(R.string.update)
 
             binding.btnSave.setOnClickListener {
-                viewModel.saveMyLatLon(latLng)
+                viewModel.saveMyLatLon(p0)
                 findNavController().popBackStack()
                 Snackbar.make(requireView(), "Saved", Snackbar.LENGTH_SHORT).show()
             }
@@ -81,8 +80,8 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
             val geocoder =
                 Geocoder(requireContext().applicationContext, Locale(viewModel.getLang()))
             val address: MutableList<Address>? =
-                geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
-            viewModel.getWeatherRemotlyLatlon(latLng).observe(viewLifecycleOwner) {
+                geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
+            viewModel.getWeatherRemotlyLatlon(p0).observe(viewLifecycleOwner) {
                 when (it.status) {
                     Status.LOADING -> {
                         map.setOnMapClickListener(null)
@@ -94,7 +93,7 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
                             viewModel.addFavoriteTodatabase(
                                 FavoriteEntity(
                                     locationName = address[0].countryName + address[0].adminArea,
-                                    latLng = latLng,
+                                    latLng = p0,
                                     cashedData = it.data!!
                                 )
                             )

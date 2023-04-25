@@ -20,68 +20,58 @@
             android:layout_margin="20dp"
             app:cardCornerRadius="12dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="100dp">
 
                 <TextView
                     android:id="@+id/txtStartDate"
                     setWeekTxt="@{data.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginStart="20dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Monday">
-
-                </TextView>
+                    tools:text="Friday" />
 
                 <TextView
                     android:id="@+id/txtEndDate"
                     setDayAndMonthDate="@{data.date}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/txtStartDate"
+                    android:layout_alignStart="@id/txtStartDate"
+                    android:layout_marginTop="5dp"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
-                    android:layout_marginBottom="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/txtStartDate"
-                    app:layout_constraintTop_toBottomOf="@+id/txtStartDate"
-                    tools:text="May 14">
+                    android:textSize="16sp"
+                    tools:text="May20" />
 
-                </TextView>
+                <TextView
+                    android:id="@+id/txtTime"
+                    setMinAndMaxDegree="@{data.temp}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_toStartOf="@id/image"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="-10°C" />
 
                 <ImageView
                     android:id="@+id/image"
                     setWeatherIcon="@{data.icon}"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
                     android:layout_marginEnd="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@drawable/snow_night">
-
-                </ImageView>
-
-                <TextView
-                    android:id="@+id/txtTemp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:layout_marginEnd="20dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/image"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="10°C">
-
-                </TextView>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    tools:src="@drawable/snow" />
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
 
