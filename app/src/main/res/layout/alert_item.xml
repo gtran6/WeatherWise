@@ -47,7 +47,7 @@
                     android:layout_marginTop="5dp"
                     android:textColor="@color/white"
                     android:textSize="18sp"
-                    tools:text="To 14,May" />
+                    tools:text="To 14, May" />
 
                 <TextView
                     android:id="@+id/txtTime"
