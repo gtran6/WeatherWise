@@ -21,6 +21,7 @@ import com.myprojects.model.AlertModel
 import com.myprojects.ui.adapter.AlertAdapter
 import com.myprojects.weatherwise.R
 import com.myprojects.weatherwise.databinding.FragmentAlertBinding
+import com.myprojects.worker.AddAlertRemainder
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.text.SimpleDateFormat
 import java.util.*
@@ -108,7 +109,7 @@ class AlertFragment : Fragment(), AlertAdapter.AlertAdapterListener {
                     startDate = startDate,
                     endDate = endDate
                 )
-                viewModel.insertAlert(
+                viewModel.insetAlert(
                     pojo
                 )
                 binding.emptyLayout.visibility = View.GONE
