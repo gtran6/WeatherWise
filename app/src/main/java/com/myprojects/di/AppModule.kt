@@ -10,6 +10,7 @@ import com.myprojects.data.remote.ConnectionProvider
 import com.myprojects.data.remote.RemoteSource
 import com.myprojects.repository.Repository
 import com.myprojects.repository.RepositoryInterface
+import com.myprojects.ui.alert.AlertViewModel
 import com.myprojects.ui.favorite.FavoriteViewModel
 import com.myprojects.ui.home.HomeViewModel
 import com.myprojects.ui.map.MapViewModel
@@ -66,5 +67,9 @@ val weatherModules = module {
 
     viewModel {
         SettingViewModel(get())
+    }
+
+    viewModel {
+        AlertViewModel(get())
     }
 }
