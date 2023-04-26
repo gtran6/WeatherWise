@@ -32,4 +32,12 @@
     <string name="location">Location</string>
     <string name="enabled">Enabled</string>
     <string name="disabled">Disabled</string>
+    <string name="delete">Delete</string>
+    <string name="create_an_alert">create an alert</string>
+    <string name="time">Time</string>
+    <string name="start_date">Start Date</string>
+    <string name="add_start_date">Add start date</string>
+    <string name="end_date">End Date</string>
+    <string name="add_end_date">Add end date</string>
+    <string name="cancel">Cancel</string>
 </resources>

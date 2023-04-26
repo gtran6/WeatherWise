@@ -12,10 +12,12 @@ import com.google.android.gms.maps.model.LatLng
 import com.myprojects.data.entity.FavoriteEntity
 import com.myprojects.data.preferences.AppUnits
 import com.myprojects.data.preferences.PreferenceProvider
+import com.myprojects.model.AlertModel
 import com.myprojects.model.FavoriteModel
 import com.myprojects.model.weather.Daily
 import com.myprojects.model.weather.Hourly
 import com.myprojects.model.weather.Temp
+import com.myprojects.ui.adapter.AlertAdapter
 import com.myprojects.ui.adapter.DayAdapter
 import com.myprojects.ui.adapter.FavoriteAdapter
 import com.myprojects.ui.adapter.WeekAdapter
@@ -95,7 +97,6 @@ fun RecyclerView.setFavoriteAdapter(favModel: FavoriteModel?) {
         this.adapter = favAdapter
     }
 }
-/*
 @BindingAdapter("setAlertAdapter")
 fun RecyclerView.setAlertAdapter(alertModel: AlertModel?) {
     if (alertModel != null) {
@@ -104,7 +105,7 @@ fun RecyclerView.setAlertAdapter(alertModel: AlertModel?) {
         alertAdapter.setList(alertModel.list ?: arrayListOf())
         this.adapter = alertAdapter
     }
-}*/
+}
 
 @SuppressLint("SimpleDateFormat")
 @BindingAdapter("setWeekTxt")
