@@ -16,7 +16,7 @@ class AlertViewModel(val repo: RepositoryInterface) : ViewModel() {
         }
     }
 
-    fun getAllAlerts = liveData(Dispatchers.IO) {
+    fun getAllAlerts() = liveData(Dispatchers.IO) {
         emit(Resource.Loading(isLoading = true, _data = null))
         try {
             emit(Resource.Success(_data = repo.getAllAlerts()))
