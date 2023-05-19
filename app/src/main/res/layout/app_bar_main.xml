@@ -11,8 +11,8 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/blue"
-            android:backgroundTint="@color/blue"
+            android:background="@color/pink"
+            android:backgroundTint="@color/pink"
             android:elevation="0dp"
             android:theme="@style/Theme.WeatherApp.AppBarOverlay"
             app:elevation="0dp">
@@ -21,8 +21,8 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:background="@color/blue"
-                android:backgroundTint="@color/blue"
+                android:background="@color/pink"
+                android:backgroundTint="@color/pink"
                 android:elevation="0dp"
                 app:elevation="0dp"
                 app:popupTheme="@style/Theme.WeatherApp.PopupOverlay" />

@@ -16,7 +16,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:backgroundTint="#639AD8"
+            android:background="@{@drawable/gradient_bg}"
             android:layout_margin="20dp"
             app:cardCornerRadius="12dp">
 
@@ -33,7 +33,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="20dp"
                     android:layout_marginTop="20dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkBlue"
                     android:textSize="18sp"
                     tools:text="From 12,feb" />
 
@@ -45,7 +45,7 @@
                     android:layout_below="@id/txtStartDate"
                     android:layout_alignStart="@id/txtStartDate"
                     android:layout_marginTop="5dp"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkBlue"
                     android:textSize="18sp"
                     tools:text="To 14, May" />
 
@@ -57,7 +57,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginStart="20dp"
                     android:layout_toEndOf="@+id/txtStartDate"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkBlue"
                     android:textSize="18sp"
                     tools:text="12:00AM" />
 

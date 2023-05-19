@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/blue"
+        android:background="@color/pink"
         android:orientation="horizontal"
         android:padding="20dp"
         android:weightSum="2">
@@ -22,14 +22,14 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#639AD8"
+                android:background="@{@drawable/gradient_bg}"
                 app:cardCornerRadius="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/temperature"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkBlue"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
                     android:textSize="18sp">
@@ -50,26 +50,26 @@
                     android:id="@+id/tempKelvin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:checked="true"
                     android:text="@string/kelvin"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
                 <RadioButton
                     android:id="@+id/tempFahrenheit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:text="@string/fahrenheit"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
                 <RadioButton
                     android:id="@+id/tempCelsius"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:text="@string/celsius"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
             </RadioGroup>
 
@@ -85,7 +85,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#639AD8"
+                android:background="@{@drawable/gradient_bg}"
                 app:cardCornerRadius="10dp">
 
                 <TextView
@@ -95,7 +95,7 @@
                     android:textSize="18sp"
                     android:layout_margin="10dp"
                     android:layout_gravity="center"
-                    android:textColor="@color/white">
+                    android:textColor="@color/darkBlue">
 
                 </TextView>
 
@@ -113,32 +113,32 @@
                     android:id="@+id/mByS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:checked="true"
                     android:text="@string/meter_second"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
                 <RadioButton
                     android:id="@+id/mByH"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:text="@string/mile_hour"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
             </RadioGroup>
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#639AD8"
+                android:background="@{@drawable/gradient_bg}"
                 app:cardCornerRadius="10dp"
                 android:layout_marginTop="50dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/darkBlue"
                     android:textSize="18sp"
                     android:layout_gravity="center"
                     android:layout_margin="8dp"
@@ -160,18 +160,18 @@
                     android:id="@+id/enabled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:checked="true"
                     android:text="@string/enabled"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
                 <RadioButton
                     android:id="@+id/disabled"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:buttonTint="@color/white"
+                    android:buttonTint="@color/darkBlue"
                     android:text="@string/disabled"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/darkBlue" />
 
             </RadioGroup>
 

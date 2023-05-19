@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:background="@color/blue"
+        android:background="@color/pink"
         tools:context="com.myprojects.ui.week.WeekFragment">
 
         <TextView
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/next_48_hours"
-            android:textColor="@color/white"
+            android:textColor="@color/darkBlue"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_margin="20dp"
@@ -31,7 +31,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dayRecycler"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="215dp"
             setDayAdapter="@{data.day}"
             android:scrollbars="vertical"
             android:layout_marginTop="20dp"
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/this_week"
-            android:textColor="@color/white"
+            android:textColor="@color/darkPurple"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/txt"
