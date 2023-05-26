@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:text="@string/app_name"
-        android:textColor="@color/black"/>
+        android:textColor="@color/yellow"/>
 
 </LinearLayout>

@@ -18,7 +18,7 @@ import com.myprojects.weatherwise.MainActivity
 import com.myprojects.weatherwise.databinding.FragmentFavoriteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FavoriteFragment : Fragment(), FavoriteAdapter.FavoriteAdapterInterface {
+class FavoriteFragment : Fragment(), FavoriteAdapter.FavAdapterInterface {
 
     private lateinit var binding: FragmentFavoriteBinding
     private lateinit var navController: NavController
@@ -51,7 +51,7 @@ class FavoriteFragment : Fragment(), FavoriteAdapter.FavoriteAdapterInterface {
                 binding.progressBar.visibility = View.VISIBLE
             }
             Status.SUCCESS -> {
-                if (response.data != null && !response.data.isEmpty()) {
+                if (!response.data.isNullOrEmpty()) {
                     cashedData = response.data as ArrayList<FavoriteEntity>
                     binding.progressBar.visibility = View.GONE
                     binding.layout.visibility = View.GONE

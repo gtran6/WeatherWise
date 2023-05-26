@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.myprojects.model.WeekModel
 import com.myprojects.model.weather.Daily
-import com.myprojects.weatherwise.R
 import com.myprojects.weatherwise.databinding.WeekItemBinding
 
-class WeekAdapter() : RecyclerView.Adapter<WeekAdapter.WeekViewHolder>() {
+class WeekAdapter : RecyclerView.Adapter<WeekAdapter.WeekViewHolder>() {
 
     private val arrayList: ArrayList<Daily> = arrayListOf()
 

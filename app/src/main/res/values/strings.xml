@@ -41,4 +41,5 @@
     <string name="add_end_date">Add end date</string>
     <string name="cancel">Cancel</string>
     <string name="air_quality">Air Quality</string>
+    <string name="save_location">Save Location</string>
 </resources>

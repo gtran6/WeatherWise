@@ -9,8 +9,9 @@ import com.myprojects.weatherwise.databinding.FavoriteItemBinding
 
 class FavoriteAdapter(
     private val countries: ArrayList<FavoriteEntity> = arrayListOf(),
-    private val listener: FavoriteAdapterInterface
-) : RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
+    private val listener: FavAdapterInterface
+) :
+    RecyclerView.Adapter<FavoriteAdapter.FavViewHolder>() {
 
     @SuppressLint("NotifyDataSetChanged")
     fun setCountries(newList: ArrayList<FavoriteEntity>) {
@@ -19,12 +20,19 @@ class FavoriteAdapter(
         notifyDataSetChanged()
     }
 
-    interface FavoriteAdapterInterface {
-        fun onDeleteImageClick(pos: Int)
-        fun onItemClick(pos: Int)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavViewHolder =
+        FavViewHolder(
+            FavoriteItemBinding.inflate(LayoutInflater.from(parent.context), parent, false),
+            listener
+        )
 
-    class ViewHolder(private val binding: FavoriteItemBinding, listener: FavoriteAdapterInterface) : RecyclerView.ViewHolder(binding.root) {
+    override fun onBindViewHolder(holder: FavViewHolder, position: Int) =
+        holder.bind(countries[position].locationName)
+
+    override fun getItemCount(): Int = if (countries.isEmpty()) 0 else countries.size
+
+    inner class FavViewHolder(val binding: FavoriteItemBinding, listener: FavAdapterInterface) :
+        RecyclerView.ViewHolder(binding.root) {
 
         init {
             binding.imgDelete.setOnClickListener { listener.onDeleteImageClick(adapterPosition) }
@@ -37,10 +45,8 @@ class FavoriteAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
-        FavoriteItemBinding.inflate(LayoutInflater.from(parent.context), parent, false), listener)
-
-    override fun getItemCount(): Int = if (countries.isEmpty()) 0 else countries.size
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) = holder.bind(countries[position].locationName)
+    interface FavAdapterInterface {
+        fun onDeleteImageClick(pos: Int)
+        fun onItemClick(pos: Int)
+    }
 }

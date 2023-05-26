@@ -6,6 +6,7 @@ import android.location.Geocoder
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.model.LatLng
@@ -82,7 +83,7 @@ fun RecyclerView.setDayAdapter(list: ArrayList<Hourly>?) {
 
 @BindingAdapter("setWeekAdapter")
 fun RecyclerView.setWeekAdapter(list: ArrayList<Daily>?) {
-    this.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+    this.layoutManager = GridLayoutManager(context, 2, GridLayoutManager.VERTICAL, false)
     val weekAdapter = WeekAdapter()
     weekAdapter.setWeek(list ?: arrayListOf())
     this.adapter = weekAdapter

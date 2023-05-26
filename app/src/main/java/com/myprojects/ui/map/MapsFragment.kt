@@ -25,6 +25,7 @@ import com.myprojects.data.remote.Status
 import com.myprojects.weatherwise.R
 import com.myprojects.weatherwise.databinding.FragmentMapsBinding
 import java.util.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
     private lateinit var binding: FragmentMapsBinding
@@ -33,7 +34,9 @@ class MapsFragment : Fragment(), GoogleMap.OnMapClickListener {
     private val args: MapsFragmentArgs by navArgs()
     private val nullLatLon = LatLng(NULL_LAT, NULL_LON)
 
-    private val viewModel by viewModels<MapViewModel>()
+    private val viewModel: MapViewModel by viewModel()
+
+    //private val viewModel by viewModels<MapViewModel>()
 
     private val callback = OnMapReadyCallback { googleMap ->
         googleMap.uiSettings.isZoomControlsEnabled = true
