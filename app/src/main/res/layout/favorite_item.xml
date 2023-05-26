@@ -12,53 +12,48 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginTop="10dp">
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="@color/lightBlue"
             android:clickable="true"
             android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
             app:cardCornerRadius="10dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="50dp">
 
                 <TextView
                     android:id="@+id/txtCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="Dallas"
-                    android:layout_marginStart="20dp"
-                    android:layout_centerVertical="true"
                     android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:text="@{data}"
                     android:textColor="@color/white"
-                    android:textSize="25sp">
-
-                </TextView>
+                    android:textSize="18sp"
+                    tools:text="California" />
 
                 <ImageView
                     android:id="@+id/imgDelete"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="10dp"
                     android:clickable="true"
                     android:focusable="true"
-                    android:src="@drawable/ic_baseline_delete_24">
-
-                </ImageView>
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/ic_baseline_delete_24" />
 
             </RelativeLayout>
-
         </androidx.cardview.widget.CardView>
 
     </FrameLayout>
